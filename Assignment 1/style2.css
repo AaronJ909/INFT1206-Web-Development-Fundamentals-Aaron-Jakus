@@ -113,7 +113,7 @@ html, body {
     display: flex;
   }
   
-  article, section {
+  article,section {
     flex: 4;
   }
   
@@ -136,4 +136,3 @@ html, body {
   footer {
     margin-top: 10px;
   }
-  
