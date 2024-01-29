@@ -22,3 +22,23 @@ body {
   p, li, dd, dt, address {
     line-height: 1.5;
   }
+
+
+  subject{
+    font-size: 20px;
+  }
+
+
+  dates{
+    font-size: 20px;
+  }
+
+
+  study_subjects{
+    font-size: 20px;
+  }
+
+
+  exotic_dance{
+    font-size: 20px;
+  }
