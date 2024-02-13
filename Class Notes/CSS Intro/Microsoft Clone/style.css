@@ -1,0 +1,116 @@
+.navigation-bar-container {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4vh;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.left-navigation-list, .right-navigation-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.left-navigation-list > li, .right-navigation-list > li {
+    margin-right: 20px;
+    font-size: 14px;
+    color: grey;
+}
+
+.right-navigation-list > i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: grey;
+}
+
+ul > li {
+    list-style-type: none;
+    margin: 0 2vw 0 2vw;
+    padding: 0;
+}
+
+ul > li:hover {
+    color: black;
+}
+
+.display-container {
+    height: 55vh;
+    display: flex;
+    background-image: url("https://giphy.com/embed/H1jR8tOygUevFZJk5J");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.right-display {
+    width: 55%;
+}
+
+.left-display {
+     width: 45%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.left-display-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 60%;
+}
+
+.left-display-content * {
+    margin: 0;
+    padding:0;
+}
+
+.new-banner {
+    background-color: #ffb900;
+    font-weight: bold;
+    padding: 3px 5px 3px 5px;
+}
+
+.left-display-content > p {
+    font-size: 10px;
+}
+
+.left-display-buttons > button {
+    color: white;
+    background-color: #0067b8;
+    padding: 5px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+
+}
+.option a {
+    font-size: 12px;
+}
+i {
+    font-size: 24px;
+}
+
+.microsoft-logo {
+    width: 8vw;
+    height: auto;
+}
+
+
+
+
+

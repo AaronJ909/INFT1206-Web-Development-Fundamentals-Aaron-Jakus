@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: yellow; */
+}
+
+div {
+    /* border: 2px solid red; */
+}
+
+/* .header will target the element that has a class of 'header' */
+.header {
+    padding: 60px;
+    text-align: center;
+    background-color:#1abc9c;
+    color: white;
+}
+
+/* .navbar will target the element that has a class of 'navbar' */
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+
+/* This will target all the <a> elements inside the element with a class of 'navbar' */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background-color: green;
+    color: black;
+    border-radius: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+/*<!--allows for the size adjustment of the webpage for different devices such as a phone-->*/
+@media screen and (max-width: 768px) {
+    /* body * {
+        background-color: red;
+    } */
+
+    .navbar, .main-content {
+        flex-direction: column;
+    }
+
+
+}
