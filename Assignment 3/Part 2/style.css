@@ -4,15 +4,22 @@ html {
   
   /* Your CSS below here */
 
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
   div {
     /*After research I came to the conclusion that 1 rem has the default value of 16 pixels
      so I added a little more to the value until I was certain that the values where equal.*/
     font-size: 1.25rem;
     width: 200px;
     height: 200px;
-    display:flex;
+    display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     background-color: lightblue;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -22,5 +29,5 @@ html {
     https://www.w3schools.com/css/css_text_shadow.asp*/
     box-shadow: 3px 3px 5px black
               inset 1px 1px 2px white
-              inset -1px -1px 2px black;
+              inset 1px 1px 2px black;
   }
