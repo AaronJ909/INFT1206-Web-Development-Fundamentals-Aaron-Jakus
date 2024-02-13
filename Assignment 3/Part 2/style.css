@@ -3,3 +3,16 @@ html {
   }
   
   /* Your CSS below here */
+
+  div {
+    /*After research I came to the conclusion that 1 rem has the default value of 16 pixels
+     so I added a little more to the value until I was certain that the values where equal.*/
+    font-size: 1.25rem;
+    width: 200px;
+    height: 200px;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    background-color: lightblue;
+    color: white;
+  }
