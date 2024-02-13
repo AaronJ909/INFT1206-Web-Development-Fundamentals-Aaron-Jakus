@@ -22,12 +22,23 @@ html {
     align-items: center;
     background-color: lightblue;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px;
     border-radius: 10px;
     border: 1px solid #2980b9;
     /*implemnetation and syntax for shadowing came from 
     https://www.w3schools.com/css/css_text_shadow.asp*/
-    box-shadow: 3px 3px 5px black
-              inset 1px 1px 2px white
-              inset 1px 1px 2px black;
+    
+    /* problem was answered by the following source with the
+    rgba element https://css-tricks.com/almanac/properties/t/text-shadow/
+    */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0 0.5),
+              inset -3px -3px 6px rgba(255, 255, 255, 0.5),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.5);
   }
+
+  /* note regarding rgba 
+  1. value = The X-coordinate
+    2. value = The Y-coordinate
+    3. value = The blur radius
+    4. value = The color of the shadow
+*/
