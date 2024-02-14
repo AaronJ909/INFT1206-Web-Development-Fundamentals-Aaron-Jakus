@@ -84,3 +84,7 @@ a:hover, a:focus {
 a:active {
     color: lightblue;
 }
+
+li {
+    line-height: 1.5;
+}
