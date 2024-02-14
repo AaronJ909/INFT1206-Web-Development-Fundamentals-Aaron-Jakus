@@ -1,5 +1,6 @@
 /* General setup */
 
+
 * {
     box-sizing: border-box;
   }
@@ -43,3 +44,16 @@
   }
   
   /* WRITE YOUR CODE BELOW HERE */
+
+  /* application for fonts came from https://www.w3schools.com/cssref/css3_pr_font-face_rule.php */
+  @font-face {
+    font-family: 'Open Sans', sans-serif;
+    font-family:'Gill Sans', sans-serif;
+    font-family: 'Lucida Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
