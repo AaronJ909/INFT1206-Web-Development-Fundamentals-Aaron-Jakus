@@ -107,3 +107,25 @@ a[href^="http"]:not([href*="https.example"])::after {
     background: url('/external-link-52.png') no-repeat;
     margin-left: 5px;
 }
+
+/*Application came from https://github.com/Kareem-Draz-DC/WEBD-2201-W2024/blob/main/Class-Notes/CSS/Responsive-Design/style.css
+and https://www.w3schools.com/css/css_navbar.asp and https://www.geeksforgeeks.org/how-to-create-vertical-navigation-bar-using-html-and-css/
+*/
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background: lightgray;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: lightblue;
+}
