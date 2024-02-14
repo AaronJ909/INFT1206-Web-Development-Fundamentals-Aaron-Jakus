@@ -67,6 +67,11 @@
     text-align: center;
   }
 
+  /*NOTE the section element here is based on the section tag listed above and only edits the headers inside the header HTML tag inside the HTML file */
 section h1 + p, section h2 + p, section h3 + p, section h4 + p, section h5 + p, section h6 + p{
     text-indent: 20px;
+}
+
+a {
+    color: #daa777;
 }
