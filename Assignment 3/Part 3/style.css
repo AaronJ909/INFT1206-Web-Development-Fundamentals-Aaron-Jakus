@@ -88,3 +88,22 @@ a:active {
 li {
     line-height: 1.5;
 }
+
+/* the following attribute selector was completed via research and testing
+with help from the following resources.
+https://www.w3schools.com/css/css_attribute_selectors.asp
+https://christianoliff.com/blog/styling-external-links-with-an-icon-in-css/
+https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+*/
+/* for some particular reason that I am not 100% sure of is that for some
+reason when I try to set the target attribute to just https and not something with
+either a . or www. it does not load the image properly. I am bound to do more research
+regarding this topic as it is interesting to learn something as new as this. */
+a[href^="http"]:not([href*="https.example"])::after {
+    content: " ";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('/external-link-52.png') no-repeat;
+    margin-left: 5px;
+}
