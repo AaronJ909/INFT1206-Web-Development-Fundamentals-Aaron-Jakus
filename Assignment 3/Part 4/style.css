@@ -17,10 +17,14 @@ body {
     max-width: 980px;
   }
   
+  /*research and application for the grid layout came from https://www.w3schools.com/css/css_grid.asp */
   .grid {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
   }
   
   nav {
