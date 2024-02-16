@@ -52,6 +52,9 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr;
   }
 
   /*research was from https://cloudinary.com/blog/guest_post/handle-text-wrap-around-images-using-html-and-css */
