@@ -27,6 +27,7 @@ body {
     background-color: #000;
     padding: .5em;
     display: flex;
+    justify-content: space-between;
   }
   
   nav ul {
@@ -34,12 +35,14 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
   }
   
   nav a {
     color: #fff;
     text-decoration: none;
     padding: .5em 1em;
+    justify-content: space-between;
   }
   
   .photos {
