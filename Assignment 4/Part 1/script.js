@@ -26,6 +26,11 @@ function result() {
     let yItem = randomValueFromArray(insertY);
     let zItem = randomValueFromArray(insertZ);
 
+    // research and basic implementation came from 
+    // https://www.w3schools.com/jsref/jsref_replace.asp
+    newStory = newStory.replace(":insertx:", xItem);
+    newStory = newStory.replace(":inserty:", yItem);
+    newStory = newStory.replace(":insertz:", zItem);
 
   if(customName.value !== '') {
     const name = customName.value;
