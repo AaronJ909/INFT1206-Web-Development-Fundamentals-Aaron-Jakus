@@ -38,10 +38,12 @@ function result() {
 
   }
 
+  // after doing research on what stone and centigrade could mean
+  // I could not come to a conclusion but it says I need to put it into the
+  // code but I don't 100% know what it means.
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
-
+    let weight = Math.round(300 * 0.0714286) + "stone";
+    let temperature =  Math.round(94 - 32) * 5 / 9 + "centigrade";
   }
 
   story.textContent = ;
