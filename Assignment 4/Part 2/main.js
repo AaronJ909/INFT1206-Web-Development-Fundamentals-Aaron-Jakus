@@ -23,7 +23,9 @@ newImage.setAttribute('src', `images/${image}`);
 newImage.setAttribute('alt', alternativeText[image]);
 thumbBar.appendChild(newImage);
 
-
+// below was reseached and tested using the following resources:
+//https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 newImage.addEventListener("click", () => {
     const displayedImage = document.querySelector(".displayed-image");
 
@@ -33,3 +35,12 @@ newImage.addEventListener("click", () => {
 });
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+    const overlay = document.querySelector('.overlay');
+    const isDark = btn.getAttribute('class') === 'dark';
+    
+    btn.setAttribute('class', isDark ? 'light' : 'dark');
+    btn.textContent = isDark ? 'Lighten' : 'Darken';
+    overlay.style.backgroundColor = isDark ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)';
+  });
+  
