@@ -19,8 +19,8 @@ const alternativeText = {
 /* Looping through images */
 
 const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
+newImage.setAttribute('src', `images/${image}`);
+newImage.setAttribute('alt', alternativeText[image]);
 thumbBar.appendChild(newImage);
 
 /* Wiring up the Darken/Lighten button */
