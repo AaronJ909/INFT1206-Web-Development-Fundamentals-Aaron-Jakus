@@ -17,21 +17,19 @@ const alternativeText = {
 };
 
 /* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', `images/${image}`);
-newImage.setAttribute('alt', alternativeText[image]);
-thumbBar.appendChild(newImage);
-
 // below was reseached and tested using the following resources:
 //https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 //https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
-newImage.addEventListener("click", () => {
-    const displayedImage = document.querySelector(".displayed-image");
+images.forEach(image => {
+  const newImage = document.createElement('img');
+  newImage.setAttribute('src', `images/${image}.jpg`); // added .jpg here
+  newImage.setAttribute('alt', alternativeText[`${image}.jpg`]); // added .jpg here
+  thumbBar.appendChild(newImage);
 
+  newImage.addEventListener("click", () => {
     displayedImage.setAttribute("src", newImage.getAttribute("src"));
-
     displayedImage.setAttribute("alt", newImage.getAttribute("alt"));
+  });
 });
 
 /* Wiring up the Darken/Lighten button */
