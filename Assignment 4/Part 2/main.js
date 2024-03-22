@@ -17,6 +17,7 @@ const alternativeText = {
 };
 
 /* Looping through images */
+
 // below was reseached and tested using the following resources:
 //https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 //https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
