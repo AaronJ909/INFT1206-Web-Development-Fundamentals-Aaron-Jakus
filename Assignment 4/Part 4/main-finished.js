@@ -1,5 +1,4 @@
 // set up canvas
-
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 let count = 0;
@@ -22,17 +21,16 @@ class Shape {
     this.y = y;
     this.velX = velX;
     this.velY = velY;
+  }
 }
 
-}
 class Ball extends Shape {
   constructor(x, y, velX, velY, color, size ) {
     super(x, y, velX, velY);
     this.color = color;
     this.size = size;
     this.exists = true;
-}
-
+  }
 
   draw() {
     ctx.beginPath();
@@ -76,11 +74,9 @@ class Ball extends Shape {
 }
 
 class EvilCircle extends Shape {
-
   constructor(x, y) {
     super(x, y, 20, 20);
-
-    this.color = "white";
+    this.color = 'white';
     this.size = 10;
 
     window.addEventListener('keydown', (e) => {
@@ -100,12 +96,6 @@ class EvilCircle extends Shape {
       }
     });
   }
-
-    
-  
-
-
-
 
   draw() {
     ctx.beginPath();
@@ -135,17 +125,15 @@ class EvilCircle extends Shape {
     this.y += this.velY;
   }
 
-  
-
-  collisionDetect() {
-    for (const ball of balls) {
-      if (!(this === ball)) {
-        const dx = this.x - ball.x;
-        const dy = this.y - ball.y;
+  collisionDetect(balls) {
+    for (let i = 0; i < balls.length; i++) {
+      if (balls[i].exists) {
+        const dx = this.x - balls[i].x;
+        const dy = this.y - balls[i].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < this.size + ball.size) {
-          ball.color = this.color = randomRGB();
+        if (distance < this.size + balls[i].size) {
+          balls[i].exists = false;
         }
       }
     }
@@ -179,35 +167,16 @@ function loop() {
     if (ball.exists) {
       ball.draw();
       ball.update();
-      ball.collisionDetect();
+      ball.collisionDetect(balls);
     }
   }
 
-
-  EvilCircle.draw();
-  EvilCircle.checkBounds();
-  EvilCircle.collisionDetect(balls);
+  const evilCircle = new EvilCircle(random(0, width), random(0, height));
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect(balls);
 
   requestAnimationFrame(loop);
 }
-
-loop();
-
-window.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "a":
-      this.x -= this.velX;
-      break;
-    case "d":
-      this.x += this.velX;
-      break;
-    case "w":
-      this.y -= this.velY;
-      break;
-    case "s":
-      this.y += this.velY;
-      break;
-  }
-});
 
 loop();
