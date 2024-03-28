@@ -75,44 +75,35 @@ class Ball extends Shape {
   }
 }
 
-  class EvilCircle extends Shape {
-    constructor(x, y) {
-      super(x, y, 20, 20);
-      this.color = 'white';
-      this.size = 10;
-      this.velX = 20;
-      this.velY = 20;
-      window.addEventListener("keydown", this.handleKeydown.bind(this));
-    }
+class EvilCircle extends Shape {
+
+  constructor(x, y) {
+    super(x, y, 20, 20);
+
+    this.color = "white";
+    this.size = 10;
+
+    window.addEventListener('keydown', (e) => {
+      switch(e.key) {
+        case 'a':
+          this.x -= this.velX;
+          break;
+        case 'd':
+          this.x += this.velX;
+          break;
+        case 'w':
+          this.y -= this.velY;
+          break;
+        case 's':
+          this.y += this.velY;
+          break;
+      }
+    });
+  }
+
+    
   
 
-  handleKeydown(e) {
-    switch (e.key) {
-      case "a":
-        this.x -= this.velX;
-        break;
-      case "d":
-        this.x += this.velX;
-        break;
-      case "w":
-        this.y -= this.velY;
-        break;
-      case "s":
-        this.y += this.velY;
-        break;
-    }
-  }
-}
-
-
-
-class Ball extends Shape {
-  constructor(x, y, velX, velY, color, size) {
-    super(x, y, velX, velY);
-    this.color = color;
-    this.size = size;
-    this.exists = true;
-  }
 
 
 
