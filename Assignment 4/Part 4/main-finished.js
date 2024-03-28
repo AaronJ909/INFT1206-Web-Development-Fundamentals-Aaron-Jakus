@@ -2,30 +2,37 @@
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-const evilCircle = new EvilCircle(50, 50);
+let count = 0;
 const para = document.querySelector('p');
-
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// function to generate random number
-
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// function to generate random RGB color value
+  const num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+};
 
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-class EvilCircle extends Shape {
-  constructor(x, y) {
-    super(x, y, 20, 20);
-    this.color = 'white';
-    this.size = 10;
-  }
+class Shape {
+  constructor(x, y, velX, velY) {
+    this.x = x;
+    this.y = y;
+    this.velX = velX;
+    this.velY = velY;
+}
+
+}
+class Ball extends Shape {
+  constructor(x, y, velX, velY, color, size ) {
+    super(x, y, velX, velY);
+    this.color = color;
+    this.size = size;
+    this.exists = true;
+}
+
 
   draw() {
     ctx.beginPath();
@@ -68,14 +75,35 @@ class EvilCircle extends Shape {
   }
 }
 
+  class EvilCircle extends Shape {
+    constructor(x, y) {
+      super(x, y, 20, 20);
+      this.color = 'white';
+      this.size = 10;
+      this.velX = 20;
+      this.velY = 20;
+      window.addEventListener("keydown", this.handleKeydown.bind(this));
+    }
+  
 
-class EvilCircle extends Shape {
-  constructor(x, y) {
-    super(x, y, 20, 20);
-    this.color = 'white';
-    this.size = 10;
+  handleKeydown(e) {
+    switch (e.key) {
+      case "a":
+        this.x -= this.velX;
+        break;
+      case "d":
+        this.x += this.velX;
+        break;
+      case "w":
+        this.y -= this.velY;
+        break;
+      case "s":
+        this.y += this.velY;
+        break;
+    }
   }
 }
+
 
 
 class Ball extends Shape {
@@ -165,9 +193,9 @@ function loop() {
   }
 
 
-  evilCircle.draw();
-  evilCircle.checkBounds();
-  evilCircle.collisionDetect(balls);
+  EvilCircle.draw();
+  EvilCircle.checkBounds();
+  EvilCircle.collisionDetect(balls);
 
   requestAnimationFrame(loop);
 }
