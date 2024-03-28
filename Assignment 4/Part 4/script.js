@@ -3,6 +3,7 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const evilCircle = new EvilCircle(50, 50);
+const para = document.querySelector('p');
 
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
@@ -147,6 +148,9 @@ while (balls.length < 25) {
 
   balls.push(ball);
 }
+
+let ballCount = balls.length;
+para.textContent = 'Ball count: ' + ballCount;
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
