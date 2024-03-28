@@ -2,6 +2,7 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 let count = 0;
+
 const para = document.querySelector('p');
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
