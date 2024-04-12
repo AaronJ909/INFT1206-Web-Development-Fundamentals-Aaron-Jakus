@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script.js"></script>
+    <style>
+      .event-form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: 0 auto;
+      }
+    </style>
+    <title>Handling Forms</title>
+  </head>
+  <body>
+    <h1>Handling Forms</h1>
+    <h2>Summer Events</h2>
+    <form
+      id="event-form"
+      class="event-form"
+      onsubmit="handleFormSubmit(); return false;"
+    >
+      <label for="eventName">Event Name:</label>
+      <input type="text" name="eventName" autocomplete="off" />
+      <label for="eventDetails">Event Details:</label>
+      <textarea type="text" name="eventDetails" autocomplete="off"></textarea>
+      <label for="eventName">Event Organizer Email:</label>
+      <input type="text" name="eventEmail" autocomplete="off" />
+      <label for="eventDate">Event Date:</label>
+      <input type="date" name="eventDate" autocomplete="off" />
+      <input type="submit" value="Add New Summer Event!" />
+    </form>
+    <div class="summer-events"></div>
+  </body>
+</html>
