@@ -41,24 +41,6 @@ class Ball extends Shape {
     ctx.stroke();
   }
 
-  checkBounds() {
-    if ((this.x + this.size) >= width) {
-      this.x -= this.size;
-    }
-
-    if ((this.x - this.size) <= 0) {
-      this.x += this.size;
-    }
-
-    if ((this.y + this.size) >= height) {
-      this.y -= this.size;
-    }
-
-    if ((this.y - this.size) <= 0) {
-      this.y += this.size;
-    }
-  }
-
   update() {
     if ((this.x + this.size) >= width) {
       this.velX = -(this.velX);
@@ -81,15 +63,15 @@ class Ball extends Shape {
   }
   
 
-  collisionDetect(balls) {
-    for (let i = 0; i < balls.length; i++) {
-      if (balls[i].exists) {
-        const dx = this.x - balls[i].x;
-        const dy = this.y - balls[i].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+  collisionDetect() {
+    for (const ball of balls) {
+       if (!(this === ball) && ball.exists) {
+          const dx = this.x - ball.x;
+          const dy = this.y - ball.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < this.size + balls[i].size) {
-          balls[i].exists = false;
+          if (distance < this.size + ball.size) {
+            ball.color = this.color = randomRGB();
         }
       }
     }
@@ -127,25 +109,22 @@ class EvilCircle extends Shape {
     ctx.fill();
   }
 
-  update() {
-    if (this.x + this.size >= width) {
-      this.velX = -Math.abs(this.velX);
+  checkBounds() {
+    if ((this.x + this.size) >= width) {
+      this.x -= this.size;
     }
 
-    if (this.x - this.size <= 0) {
-      this.velX = Math.abs(this.velX);
+    if ((this.x - this.size) <= 0) {
+      this.x += this.size;
     }
 
-    if (this.y + this.size >= height) {
-      this.velY = -Math.abs(this.velY);
+    if ((this.y + this.size) >= height) {
+      this.y -= this.size;
     }
 
-    if (this.y - this.size <= 0) {
-      this.velY = Math.abs(this.velY);
+    if ((this.y - this.size) <= 0) {
+      this.y += this.size;
     }
-
-    this.x += this.velX;
-    this.y += this.velY;
   }
 
   collisionDetect(balls) {
@@ -156,7 +135,9 @@ class EvilCircle extends Shape {
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < this.size + balls[i].size) {
-          balls[i].exists = false;
+          balls[i].exists = false; 
+          count--;
+          para.textContent = 'Ball count: ' + count;
         }
       }
     }
@@ -177,10 +158,11 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  count++;
+  para.textContent = 'Ball count: ' + count;
 }
 
-let ballCount = balls.length;
-para.textContent = 'Ball count: ' + ballCount;
+const  evilCircle = new EvilCircle(random(0, width), random(0, height));
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
@@ -194,7 +176,6 @@ function loop() {
     }
   }
 
-  const evilCircle = new EvilCircle(random(0, width), random(0, height));
   evilCircle.draw();
   evilCircle.checkBounds();
   evilCircle.collisionDetect(balls);
